@@ -15,6 +15,17 @@ public class BathAndBodyCare extends ChildShopGoods {
 		super(category, nameOfProduct, ageCategory, brand, price, whatGender);
 		this.packSize = packSize;
 	}
+	
+	
+	@Override
+	public String getHeaders() {
+		return super.getHeaders() + ", packSize";
+	}
+	
+	@Override
+	public String toCSV() {
+		return super.toCSV() + "," + packSize;
+	}
 
 	@Override
 	public String toString() {

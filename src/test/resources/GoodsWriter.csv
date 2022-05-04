@@ -1,0 +1,8 @@
+category, nameOfProduct, ageCategory, brand, price, whatGender, packSize
+Bath And Body Care,Shampoo,NINETOTWELFTHMONTH,Bioderma,89,UniSex,Small
+category, nameOfProduct, ageCategory, brand, price, whatGender, clothesType, clothesColour
+Clothes,TSirts colorful,ONETOFOURMONTH,Zara,399,Girls,TShirt,pink
+Clothes,Gloves for winter,FOURWEEKS,Mango,200,UniSex,Gloves,grey
+Clothes,BodySuit monotonne,NINETOTWELFTHMONTH,Teddy,659,Boys,BodySuit,blue
+category, nameOfProduct, ageCategory, brand, price, whatGender, addsToFood , expeienceDate
+Feeding Care ,Oats Cereal,FIVETOEIGHTMONTH,Milupa,78,UniSex,pumpkin, dry milk, no sugar,25/06/2023

@@ -19,6 +19,17 @@ public class Clothes extends ChildShopGoods {
 	}
 
 	@Override
+	public String getHeaders() {
+		return super.getHeaders() + ", clothesType, clothesColour";
+	}
+	
+	@Override
+	public String toCSV() {
+		return super.toCSV() + "," + clothesType + "," + clothesColour;
+	}
+
+	
+	@Override
 	public String toString() {
 		return "Category: " + this.category + ", product: " + this.nameOfProduct + ", for age in month: "
 				+ this.ageCategory + ", brand: " + this.brand + ", price: " + this.price + " UAH" + ", gender: "

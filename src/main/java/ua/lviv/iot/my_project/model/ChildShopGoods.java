@@ -1,14 +1,11 @@
 package ua.lviv.iot.my_project.model;
 
-import lombok.EqualsAndHashCode;
+
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@EqualsAndHashCode
-@NoArgsConstructor
 public abstract class ChildShopGoods {
 
 	protected String category;
@@ -28,6 +25,14 @@ public abstract class ChildShopGoods {
 		this.whatGender = whatGender;
 	}
 
+	public String getHeaders() {
+		return "category, nameOfProduct, ageCategory, brand, price, whatGender";
+	}
+	
+	public String toCSV() {
+		return category + "," + nameOfProduct + "," + ageCategory + "," + brand + "," + price + "," + whatGender;
+	}
+	
 	@Override
 	public String toString() {
 		return "Category: " + this.category + ", product: " + this.nameOfProduct + ", for age in month: "
@@ -35,6 +40,4 @@ public abstract class ChildShopGoods {
 				+ this.whatGender + ".";
 
 	}
-	
-
 }

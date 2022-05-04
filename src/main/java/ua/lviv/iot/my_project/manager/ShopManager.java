@@ -1,6 +1,5 @@
 package ua.lviv.iot.my_project.manager;
 import ua.lviv.iot.my_project.model.*;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -26,8 +25,8 @@ public class ShopManager {
 		});
 	}
 
-	public ArrayList<ChildShopGoods> findGoodsByAge(AgeCategory ageCategory) {
-		ArrayList<ChildShopGoods> goodsSameAge = new ArrayList<ChildShopGoods>();
+	public LinkedList<ChildShopGoods> findGoodsByAge(AgeCategory ageCategory) {
+		LinkedList<ChildShopGoods> goodsSameAge = new LinkedList<ChildShopGoods>();
 		for (List<ChildShopGoods> goods : goodsMap.values()) {
 			for (ChildShopGoods good : goods) {
 				if (good.getAgeCategory().equals(ageCategory)) {
@@ -37,13 +36,11 @@ public class ShopManager {
 		}
 		return goodsSameAge;
 	}
-	
-	public void  sortByPriceAscending(List<ChildShopGoods> goods){
+
+	public void sortByPriceAscending(List<ChildShopGoods> goods) {
 		goods.sort(ascendingsortByPrice);
 	}
 
-
-	
 	public static Comparator<ChildShopGoods> ascendingsortByPrice = new Comparator<ChildShopGoods>() {
 		public int compare(ChildShopGoods good1, ChildShopGoods good2) {
 			int GoodPrice1 = good1.getPrice();
@@ -52,11 +49,11 @@ public class ShopManager {
 			return GoodPrice1 - GoodPrice2;
 		}
 	};
-	
-	public void  sortByPriceDescending(List<ChildShopGoods> goods){
+
+	public void sortByPriceDescending(List<ChildShopGoods> goods) {
 		goods.sort(descendingsortByPrice);
 	}
-	
+
 	public static Comparator<ChildShopGoods> descendingsortByPrice = new Comparator<ChildShopGoods>() {
 		public int compare(ChildShopGoods good1, ChildShopGoods good2) {
 			int GoodPrice1 = good1.getPrice();
@@ -66,11 +63,10 @@ public class ShopManager {
 		}
 	};
 
-	
-	public void  sortByNameAscending(List<ChildShopGoods> goods){
+	public void sortByNameAscending(List<ChildShopGoods> goods) {
 		goods.sort(ascendingsortByName);
 	}
-	
+
 	public static Comparator<ChildShopGoods> ascendingsortByName = new Comparator<ChildShopGoods>() {
 		public int compare(ChildShopGoods good1, ChildShopGoods good2) {
 			String GoodName1 = good1.getNameOfProduct().toUpperCase();
@@ -79,10 +75,6 @@ public class ShopManager {
 			return GoodName1.compareTo(GoodName2);
 		}
 	};
-	
-	public void  sortByNameDescending(List<ChildShopGoods> goods){
-		goods.sort(descendingsortByName);
-	}
 
 	public static Comparator<ChildShopGoods> descendingsortByName = new Comparator<ChildShopGoods>() {
 		public int compare(ChildShopGoods good1, ChildShopGoods good2) {
@@ -92,5 +84,19 @@ public class ShopManager {
 			return GoodName2.compareTo(GoodName1);
 		}
 	};
+	
+	public void sortByNameDescending(List<ChildShopGoods> goods) {
+		goods.sort(descendingsortByName);
+	}
+	
+	@Override 
+	public String toString() {
+		return "Goods Map" + getGoodsMap();
+	}
+
+	public Map<String, List<ChildShopGoods> > getGoodsMap() {
+		return goodsMap;
+	}
+
 
 };
